@@ -1,0 +1,12 @@
+/boot		emmc	/dev/block/bootdevice/by-name/BOOT      flags=backup=1;display="Kernel"
+/recovery	emmc	/dev/block/bootdevice/by-name/RECOVERY	flags=backup=1;display="Recovery"
+/system		ext4	/dev/block/bootdevice/by-name/SYSTEM
+/data		ext4	/dev/block/bootdevice/by-name/USERDATA	flags=encryptable=footer;length=-20480
+/data		f2fs	/dev/block/bootdevice/by-name/USERDATA	flags=encryptable=footer;length=-20480
+/cache		ext4	/dev/block/bootdevice/by-name/CACHE
+/cache		f2fs	/dev/block/bootdevice/by-name/CACHE
+/modem		emmc	/dev/block/bootdevice/by-name/RADIO	flags=backup=1;display="Baseband";flashimg
+/modem_debug	emmc	/dev/block/bootdevice/by-name/CP_DEBUG	flags=backup=1;display="Baseband (Debug)";flashimg;subpartitionof=/modem
+/efs		ext4	/dev/block/bootdevice/by-name/EFS	flags=backup=1;display="EFS"
+/cpefs		ext4	/dev/block/bootdevice/by-name/CPEFS	flags=backup=1;display="CPEFS";subpartitionof=/efs
+/usb-otg	vfat	/dev/block/sdd1 /dev/block/sdd		flags=display="USB-OTG";storage;wipeingui;removable
